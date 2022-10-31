@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: proxy
+  name: proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proxy
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: proxy
+    spec:
+      containers:
+        - image: harbor.cubexs.dev/prjctrepo/proxy:${VERSION}
+          imagePullPolicy: Always
+          name: proxy
+      imagePullSecrets:
+        - name: prjctps-pull-secret
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30

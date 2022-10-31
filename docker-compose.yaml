@@ -1,0 +1,6 @@
+version: "3.9"
+
+services:
+  proxy:
+    build: .
+    image: harbor.cubexs.dev/prjctrepo/proxy

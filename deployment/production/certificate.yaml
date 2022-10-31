@@ -1,0 +1,23 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: prjcthost-tls
+spec:
+  secretName: prjcthost-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - ${HOSTNAME}
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: www-prjcthost-tls
+spec:
+  secretName: www-prjcthost-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - www.${HOSTNAME}
