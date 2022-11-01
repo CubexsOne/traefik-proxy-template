@@ -2,7 +2,7 @@ entryPoints:
   web:
     address: ":8080"
 log:
-  level: "info"
+  level: "debug"
 providers:
   file:
     directory: "/etc/traefik"
