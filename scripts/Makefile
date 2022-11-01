@@ -14,7 +14,7 @@ deploy-prod: ## Prepare env variables and deploy to production
 
 deploy-int: ## Prepare env variables and deploy to integration
 	$(eval export NAMESPACE := prjctns-int)
-	$(eval export HOSTNAME := int.prjcthost)
+	$(eval export HOSTNAME := tmpl.cubexs.dev)
 	$(eval export ENVIRONMENT := integration)
 	@make deploy
 
