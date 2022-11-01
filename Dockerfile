@@ -2,5 +2,5 @@ FROM traefik:v2.9.4
 
 WORKDIR /etc/traefik
 
-COPY ./traefik.yaml .
-COPY ./http.yaml .
+COPY ./configs/traefik.yaml .
+COPY ./configs/http.yaml .
