@@ -5,9 +5,18 @@ http:
         - web
       service: web-ui
       rule: PathPrefix(`/`)
+    backend:
+      entryPoints:
+        - web
+      service: backend
+      rule: PathPrefix(`/api/`)
 
   services:
     web-ui:
       loadBalancer:
         servers:
           - url: http://web-ui:8080/
+    backend:
+      loadBalancer:
+        servers:
+          - url: http://backend:3000/
