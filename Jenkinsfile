@@ -74,7 +74,7 @@ pipeline {
 }
 
 def dockerLogin() {
-  withCredentials([usernamePassword(credentialsId: '<HARBOR_CREDENTIALS>', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+  withCredentials([usernamePassword(credentialsId: 'test-creds', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
     sh "echo $PASSWORD | docker login harbor.cubexs.dev -u $USERNAME --password-stdin"
   }
 }
