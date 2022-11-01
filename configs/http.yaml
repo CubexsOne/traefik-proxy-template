@@ -1,13 +1,13 @@
 http:
   routers:
-    example-service:
+    web-ui:
       entryPoints:
         - web
-      service: example-service
+      service: web-ui
       rule: PathPrefix(`/`)
 
   services:
-    example-service:
+    web-ui:
       loadBalancer:
         servers:
-          - url: http://example-service:8080/
+          - url: http://web-ui:8080/
