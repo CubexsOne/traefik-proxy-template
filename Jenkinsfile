@@ -89,13 +89,13 @@ def clearDocker() {
   }
 }
 
-def makeBuild(service) {
+def makeBuild() {
   timeout(time: 15, unit: 'MINUTES') {
     sh "make build"
   }
 }
 
-def makePublish(service) {
+def makePublish() {
   timeout(time: 10, unit: 'MINUTES') {
     sh "make publish"
   }
