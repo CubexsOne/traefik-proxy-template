@@ -9,7 +9,7 @@ http:
       entryPoints:
         - web
       service: backend
-      rule: PathPrefix(`/api/`)
+      rule: PathPrefix(`/api`)
 
   services:
     web-ui:
