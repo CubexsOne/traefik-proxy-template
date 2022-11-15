@@ -1,13 +1,4 @@
 http:
   routers:
-    example-service:
-      entryPoints:
-        - web
-      service: example-service
-      rule: PathPrefix(`/`)
 
   services:
-    example-service:
-      loadBalancer:
-        servers:
-          - url: http://example-service:8080/
